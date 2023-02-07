@@ -1,0 +1,67 @@
+{{#each errors}}
+    <div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+
+<h3>NEW POST:</h3>
+
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/posts/new" method="POST" class="formdiv">
+            <label for="title" style="text-tranform: uppercase; font-weight: bold;">Title: </label>
+            <input type="text" id="title" name="title" placeholder="Post Title" required style="text-tranform: uppercase; font-weight: bold;" class="form-control">
+
+            <label for="slug" style="text-tranform: uppercase; font-weight: bold;">Slug: </label>
+            <input type="text" id="slug" name="slug" placeholder="Tag Slug" class="form-control" required style="text-tranform: uppercase; font-weight: bold;">
+            
+            <label for="desc" style="text-tranform: uppercase; font-weight: bold;">Description: </label>
+            <input type="text" id="desc" name="desc" placeholder="Post Description" class="form-control" required style="text-tranform: uppercase; font-weight: bold;">
+
+            <label for="content" style="text-tranform: uppercase; font-weight: bold;">Post: </label>
+            <textarea name="content" required style="text-tranform: uppercase; font-weight: bold;" class="form-control" ></textarea>
+
+            <label for="tag" style="text-tranform: uppercase; font-weight: bold;">Tag: </label>
+            <select name="tag" class="form-select" place-holder="Select Tag">
+                {{#each tags}}
+                    <option value="{{_id}}">
+                        {{name}}
+                    </option>
+                {{else}}
+                    <option value="0">
+                        Nenhuma Categoria Registrada!
+                    </option>
+                {{/each}}
+            </select>
+
+            <br>
+
+            <button type="submit" class="btn" style="color: white; background-color: rgb(100, 0, 0);
+            box-shadow: 2px 2px rgb(63, 0, 0); position: relative; text-transform: uppercase; font-weight: bold;">Create Post</button>
+        </form>
+    </div>
+</div>
+
+
+<style>
+    .formdiv {
+        padding: 10px
+    }
+
+    .card {
+        width: 60%;
+        background-color: rgb(4, 4, 24);
+        border: 0px;
+        box-shadow: 4px 4px rgb(63, 0, 0), 8px 8px rgb(4, 4, 24);
+    }
+
+    .btn:hover {
+        background-color: rgb(63, 0, 0);
+        box-shadow: 2px 2px rgb(27, 0, 0);
+    }
+
+    .btn:active {
+        top: 2px;
+        left: 2px;
+        background-color: rgb(27, 0, 0);
+    }
+</style>

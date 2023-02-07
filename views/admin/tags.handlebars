@@ -1,0 +1,168 @@
+<h3>T.a.g.s</h3>
+<hr>
+<a href="/admin/tags/add"><button class="btn" style="color: white;">New Tag</button></a>
+
+{{#each tags}}
+    <br>
+    <div class="container-cards">
+        <div class="cards card mt-4">
+        <div class="card-body">
+            <h4 class="titleTag">{{name}}</h4>
+            <div class=" slugs">
+                <small class="slug">{{slug}}</small><br>
+            </div>
+            <p class="data">{{#formatDate date}}{{/formatDate}}</p>
+        </div>
+    </div>
+    <div class="buttonsTag">
+        <a href="/admin/tags/edit/{{_id}}"><button class="btnEdit">Edit</button></a>
+        <form action="/admin/tags/del" method="POST">
+            <input  type="hidden" name="id" value="{{_id}}">
+            <button type="submit" class="btnDel mt-2" >Delete</button>
+        </form>
+    </div>
+    </div>
+    <br>
+    <hr>
+{{else}}
+
+    <h4 class="mt-3">Nenhuma Categoria Registrada!!!</h4>
+
+{{/each}}
+
+<style>
+    @keyframes tagsneon {
+        0%{
+            color: white;
+        }
+        25% {
+            color: rgb(255, 205, 205);
+        }
+        50%{
+            color: white;
+        }
+        75% {
+            color: rgb(255, 205, 205);
+        }
+        100% {
+            color: white;
+        }
+    }
+
+    @keyframes tagsletter {
+        0%{
+            letter-spacing: 10px;
+        }
+        100%{
+            letter-spacing: 0px;
+        }
+    }
+
+    .container-cards {
+        display: flex;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        animation: tagsneon 6s infinite, tagsletter 5s;    
+    }
+
+    hr {
+        color: red;
+    }
+
+    .btn {
+        background-color: rgb(136, 0, 75);
+        box-shadow: 2px 2px rgb(90, 0, 50); 
+
+        
+        position: relative; 
+        text-transform: uppercase; 
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background-color: rgb(90, 0, 50);
+        box-shadow: 2px 2px rgb(37, 0, 21);
+    }
+
+    .btn:active {
+        top: 2px;
+        left: 2px;
+        background-color: rgb(37, 0, 21);
+    }
+
+    .titleTag, .slug {
+        color: black;
+    }
+
+    .titleTag {
+        font-weight: bold;
+    }
+
+    .slug {
+        position: relative;
+        left: 0.5em;
+    }
+
+    .slugs {
+        background-color: rgb(214, 214, 214);
+        border-radius: 5px;
+        border: 2px solid rgb(255, 146, 146);
+    }
+
+    .card {
+        display: flex;
+        width: 60%;
+        background-color: rgb(214, 214, 214);
+        box-shadow: 6px 6px rgb(44, 0, 0);
+        border: none;
+    }
+
+    .data {
+        font-size: 7pt;
+        color: black;
+    }
+
+    .buttonsTag {
+        position: relative;
+        top: 1em;
+    }
+
+    .btnEdit {
+        color: white;
+        background-color: rgb(163, 0, 68);
+
+        text-transform: uppercase; 
+        font-weight: bold;
+
+        border-radius: 10px;
+        border: none;
+
+        position: relative;
+        left: 0.5em;
+    }
+
+    .btnEdit:active {
+        background-color: rgb(34, 0, 23);
+    }
+
+    .btnDel {
+        color: white;
+        background-color: rgb(197, 0, 0);
+        position: relative;
+
+        text-transform: uppercase; 
+        font-weight: bold;
+
+        border-radius: 10px;
+        border: none;
+
+        position: relative;
+        left: 0.5em;
+    }
+
+    .btnDel:active {
+        background-color: rgb(68, 0, 0);
+    }
+</style>

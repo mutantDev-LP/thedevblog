@@ -1,0 +1,59 @@
+<h3>T.a.g.s</h3>
+<hr>
+
+{{#each tags}}
+    <a href="/tags/{{slug}}" ><h4 class="tag" >{{name}}</h4></a>
+    <br>
+{{else}}
+{{/each}}
+
+<style>
+    @keyframes tagsneon {
+        0%{
+            color: white;
+        }
+        25% {
+            color: rgb(255, 205, 205);
+        }
+        50%{
+            color: white;
+        }
+        75% {
+            color: rgb(255, 205, 205);
+        }
+        100% {
+            color: white;
+        }
+    }
+
+    @keyframes tagsletter {
+        0%{
+            letter-spacing: 10px;
+        }
+        100%{
+            letter-spacing: 0px;
+        }
+    }
+
+    h3 {
+        text-transform: uppercase;
+        animation: tagsneon 6s infinite, tagsletter 5s;    
+    }
+    
+    a {
+        text-decoration: none;
+    }
+
+    hr {
+        color: red;
+    }
+
+    .tag {
+        background-color: beige;
+        color: black;
+
+        padding: 5px;
+        border-radius: 6px;
+        box-shadow: 6px 6px rgb(44, 0, 0);
+    }
+</style>

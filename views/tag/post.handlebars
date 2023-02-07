@@ -1,0 +1,73 @@
+{{#each posts}}
+<div class="container-cards">
+    <div class="cards card mt-4">
+    <div class="card-body">
+        <h4 class="titlePost" style="color: black; text-transform: uppercase;">{{title}}</h4>
+        
+        <p style="color: black; font-weight: bold;">{{desc}}</p>
+
+        <p class="data" style="color: black;">Data: {{#formatDate date}}{{/formatDate}}</p>
+    </div>
+    <a href="/post/{{slug}}"><button class="leia btn btn-success" >Leia Mais</button></a>
+</div>
+
+<br>
+{{else}}
+    <h5>Nenhuma Postagem</h5>
+{{/each}}
+
+<style>
+    .post {
+        animation: tagsneon 6s infinite, tagsletter 5s;
+    }
+
+    h3 {
+        text-transform: uppercase;    
+    }
+
+    hr {
+        color: red;
+    }
+
+    .titleTag, .slug {
+        color: black;
+    }
+
+    .titleTag {
+        font-weight: bold;
+    }
+
+    .slug {
+        position: relative;
+        left: 0.5em;
+    }
+
+    .slugs {
+        background-color: rgb(214, 214, 214);
+    }
+
+    .content{ 
+        border: 1.5px solid rgb(255, 43, 43);
+        border-radius: 6px;
+        padding: 5px;
+    }
+
+    .card {
+        display: flex;
+        width: 60%;
+        background-color: rgb(214, 214, 214);
+        box-shadow: 6px 6px rgb(44, 0, 0);
+        border: none;
+    }
+
+    .data {
+        font-size: 7pt;
+        color: black;
+    }
+    
+    .leia {
+        position: relative;
+        left: 10px;
+        bottom: 10px;
+    }
+</style>

@@ -1,0 +1,52 @@
+{{#each errors}}
+    <div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+
+<h3 style="text-transform: uppercasse; font-weight: bold;" >Registro:</h3>
+
+<div class="card">
+    <div class="card-body">
+        <form action="" method="POST">
+            <label for="name" style="text-transform: uppercasse; font-weight: bold;">Nick: </label>
+            <input type="text" name="name" class="form-control" required>
+
+            <label for="email" style="text-transform: uppercasse; font-weight: bold;">Email: </label>
+            <input type="email" name="email" class="form-control" required>
+
+            <label for="password" style="text-transform: uppercasse; font-weight: bold;">Senha: </label>
+            <input type="password" name="password" class="form-control" required>
+
+            <label for="password2" style="text-transform: uppercasse; font-weight: bold;">Confirme a Senha: </label>
+            <input type="password" name="password2" class="form-control" required>
+            <br>
+
+            <button type="submit" class="btn" style="color: white; background-color: rgb(100, 0, 0);
+            box-shadow: 2px 2px rgb(63, 0, 0); position: relative; text-transform: uppercase; font-weight: bold;">Criar Conta</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .formdiv {
+        padding: 10px
+    }
+
+    .card {
+        width: 60%;
+        background-color: rgb(4, 4, 24);
+        border: 0px;
+        box-shadow: 4px 4px rgb(63, 0, 0), 8px 8px rgb(4, 4, 24);
+    }
+
+    .btn:hover {
+        background-color: rgb(63, 0, 0);
+        box-shadow: 2px 2px rgb(27, 0, 0);
+    }
+
+    .btn:active {
+        top: 2px;
+        left: 2px;
+        background-color: rgb(27, 0, 0);
+    }
+</style>
